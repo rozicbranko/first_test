@@ -1,0 +1,19 @@
+<h1>My Orders</h1>
+<hr>
+
+<ng-container *ngIf="IsOrder">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders$ | async">
+        <td>{{ order.shipping.name }}</td>
+        <td>{{ order.datePlaced | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>

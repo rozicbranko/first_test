@@ -1,0 +1,54 @@
+<ng-container *ngIf="isDataLoaded">
+  <h1>Order Details by {{ shipping.name }} on {{ datePlaced | date }}</h1>
+  <hr>
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Order Summary</h4>
+      <p class="card-text">You have {{ items }} items in your shopping cart.</p>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let item of items" class="list-group-item">
+          {{ item.quantity }} x {{ item.product.title }}
+          <div class="float-right font-weight-bold">
+            {{ item.totalPrice | currency:'EUR':'symbol'}}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Shipping Summary</h4>
+      <p class="card-text">Shipping address</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Name
+          <div class="float-right font-weight-bold">
+            {{ shipping.name }}
+          </div>
+        </li>
+        <li class="list-group-item">
+          Address 1
+          <div class="float-right font-weight-bold">
+            {{ shipping.addressLine1 }}
+          </div>
+        </li>
+        <li class="list-group-item">
+          Address 2
+          <div class="float-right font-weight-bold">
+            {{ shipping.addressLine2 }}
+          </div>
+        </li>
+        <li class="list-group-item">
+          City
+          <div class="float-right font-weight-bold">
+            {{ shipping.city }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
