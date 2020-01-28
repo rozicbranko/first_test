@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { ProductService } from 'src/app/product.service';
 import { Subscription } from 'rxjs';
-import { Product } from 'src/app/models/product';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
+import { ProductService } from 'shared/services/product.service';
+import { Product } from 'shared/models/product';
 
 @Component({
   selector: 'app-admin-products',

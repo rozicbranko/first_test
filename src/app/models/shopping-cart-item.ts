@@ -1,4 +1,5 @@
-import { Product } from 'src/app/models/product';
+import { Product } from 'shared/models/product';
+
 
 export class ShoppingCartItem {
     constructor(public product: Product, public quantity: number) { }
